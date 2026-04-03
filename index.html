@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ханой 3D</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    #canvas { display: block; }
+    dialog {
+      background: #111;
+      color: #ddd;
+      border: 1px solid #555;
+      border-radius: 6px;
+      padding: 24px 32px;
+      max-width: 480px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    dialog h2 {
+      letter-spacing: 0.3em;
+      margin-bottom: 16px;
+      color: #fff;
+      font-size: 18px;
+    }
+    dialog p { margin-bottom: 8px; line-height: 1.5; }
+    dialog button {
+      margin-top: 16px;
+      padding: 6px 24px;
+      background: #333;
+      color: #fff;
+      border: 1px solid #666;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    dialog button:hover { background: #555; }
+    dialog::backdrop { background: rgba(0,0,0,0.7); }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+
+  <dialog id="info-dialog">
+    <h2>Х А Н О И</h2>
+    <p>← →  — изменить положение камеры</p>
+    <p>↑ ↓  — скорость анимации</p>
+    <p>Пробел — переключить демо / игру</p>
+    <p><b>Демо:</b> 1 — больше дисков, 2 — меньше дисков</p>
+    <p><b>Игра:</b> 1, 2, 3 — выбрать столбик</p>
+    <p style="margin-top:12px; color:#aaa; font-size:12px;">
+      Цель: перенести все диски с первого столбика на третий,<br>
+      не кладя больший диск на меньший.
+    </p>
+    <button onclick="this.closest('dialog').close()">OK</button>
+  </dialog>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
